@@ -1,8 +1,7 @@
 'use client'
 import React, { useState } from 'react';
-import { CgCloseR, CgMenu } from "react-icons/cg";
 import Image from 'next/image';
-import './Navbar.scss';
+import '../styles/Navbar.scss';
 import Link from 'next/link';
 
 const Navbar: React.FC = () => {
@@ -17,7 +16,7 @@ const Navbar: React.FC = () => {
             <div className="navbar__container">
                 {/* Logo */}
                 <Link href="/">
-                    <Image src="/images/logo1.png" alt="my logo image" width={90} height={60} priority/>
+                    <Image src="/images/logo1.png" alt="my logo image" width={90} height={60} priority />
                 </Link>
 
                 {/* Hamburger Icon (for mobile) */}
