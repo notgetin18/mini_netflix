@@ -1,16 +1,28 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
+        <Header />
+        {/* <Image 
           className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
+          src="/images/HomeBackgroundImage.jpeg"
           alt="Next.js logo"
           width={180}
-          height={38}
+          height={80}
+          priority
+          layout="responsive"
+       /> */}
+          
+        <Image
+          className={styles.logo}
+          src="https://nextjs.org/icons/vercel.svg"
+          alt="Next.js logo"
+          width={180}
+          height={80}
           priority
         />
         <ol>
