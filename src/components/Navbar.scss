@@ -16,12 +16,6 @@
     align-items: center;
   }
 
-  /* Logo */
-  .navbar__logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
 
   /* Hamburger Icon (shown on smaller screens) */
   .navbar__toggle {
@@ -71,7 +65,7 @@
     .navbar__link {
       color: white;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.2rem;
 
       &:hover {
         color: red;
@@ -87,6 +81,7 @@
       font-weight: bold;
       cursor: pointer;
       text-decoration: none;
+      font-size: 1.2rem;
     }
   }
 }

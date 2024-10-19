@@ -16,11 +16,9 @@ const Navbar: React.FC = () => {
         <nav className="navbar">
             <div className="navbar__container">
                 {/* Logo */}
-                <div className="navbar__logo">
-                    <Link href="/">
-                        <Image src="/images/logo1.png" alt="my logo image" width={120} height={70} />
-                    </Link>
-                </div>
+                <Link href="/">
+                    <Image src="/images/logo1.png" alt="my logo image" width={90} height={60} priority/>
+                </Link>
 
                 {/* Hamburger Icon (for mobile) */}
                 <div className="navbar__toggle" onClick={toggleMenu}>
@@ -31,12 +29,12 @@ const Navbar: React.FC = () => {
 
                 {/* Navigation Links */}
                 <div className={`navbar__menu ${isOpen ? 'active' : ''}`}>
-                    <a href="/" className="navbar__link">
+                    <Link href="/" className="navbar__link">
                         Home
-                    </a>
-                    <a href="/" className="navbar__link">
+                    </Link>
+                    <Link href="/" className="navbar__link">
                         About Us
-                    </a>
+                    </Link>
                     <button className="navbar__button">Sign In</button>
                 </div>
             </div>
