@@ -1,71 +1,46 @@
-"use client";
+'use client'
+import React, { useState } from 'react';
 import { CgCloseR, CgMenu } from "react-icons/cg";
-import Link from "next/link";
-import { useState } from "react";
-import styles from "../styles/Navbar.module.scss"
+import Image from 'next/image';
+import './Navbar.scss';
+import Link from 'next/link';
 
-const Navbar = () => {
-    const [openMenu, setOpenMenu] = useState(false);
-    // console.log("value " + openMenu);
+const Navbar: React.FC = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <div>
-            <nav className={styles.navbar}>
-                <div className={openMenu ? `${styles.active}` : ""}>
-                    <ul className={styles.navbarList}>
-                        <li className={styles.navbarItem}>
-                            <Link
-                                className={styles.navbarLink}
-                                href="#"
-                                onClick={() => setOpenMenu(false)}
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        <li className={styles.navbarItem}>
-                            <Link
-                                className={styles.navbarLink}
-                                href="/about"
-                                onClick={() => setOpenMenu(false)}
-                            >
-                                About
-                            </Link>
-                        </li>
-                        <li className={styles.navbarItem}>
-                            <Link
-                                className={styles.navbarLink}
-                                onClick={() => setOpenMenu(false)}
-                                href="/movie"
-                            >
-                                Movie
-                            </Link>
-                        </li>
-                        <li className={styles.navbarItem}>
-                            <Link
-                                className={styles.navbarLink}
-                                onClick={() => setOpenMenu(false)}
-                                href="/contact"
-                            >
-                                Contact
-                            </Link>
-                        </li>
-                    </ul>
-
-                    {/* //nav icon */}
-                    <div className={styles["mobile-navbar-btn"]}>
-                        <CgMenu
-                            name="menu-outline"
-                            className={styles["mobile-nav-icon"]}
-                            onClick={() => setOpenMenu(true)}
-                        />
-                        <CgCloseR
-                            name="close-outline"
-                            className={`${styles["mobile-nav-icon"]} ${styles["close-outline"]}`}
-                            onClick={() => setOpenMenu(false)}
-                        />
-                    </div>
+        <nav className="navbar">
+            <div className="navbar__container">
+                {/* Logo */}
+                <div className="navbar__logo">
+                    <Link href="/">
+                        <Image src="/images/logo1.png" alt="my logo image" width={120} height={70} />
+                    </Link>
                 </div>
-            </nav>
-        </div>
+
+                {/* Hamburger Icon (for mobile) */}
+                <div className="navbar__toggle" onClick={toggleMenu}>
+                    <span className="navbar__toggle-icon"></span>
+                    <span className="navbar__toggle-icon"></span>
+                    <span className="navbar__toggle-icon"></span>
+                </div>
+
+                {/* Navigation Links */}
+                <div className={`navbar__menu ${isOpen ? 'active' : ''}`}>
+                    <a href="/" className="navbar__link">
+                        Home
+                    </a>
+                    <a href="/" className="navbar__link">
+                        About Us
+                    </a>
+                    <button className="navbar__button">Sign In</button>
+                </div>
+            </div>
+        </nav>
     );
 };
 

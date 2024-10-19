@@ -1,0 +1,35 @@
+.home-page {
+  position: relative;
+  height: 100vh; /* Full height to cover the entire screen */
+  background-image: url("/images/HomeBackgroundImage.jpeg"); /* Set your background image here */
+  background-size: cover; /* Ensure the background covers the entire page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+
+  /* Centered content on the page */
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center content */
+    text-align: center;
+    color: white; /* White text for better contrast */
+    z-index: 2; /* Ensure the content is above the background image */
+    text-shadow: black 7px 3px;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      span {
+        color: red;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: azure;
+      text-shadow: gray 1px 0px;
+    }
+  }
+}
