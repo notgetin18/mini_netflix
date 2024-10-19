@@ -1,28 +1,42 @@
 .movieCard {
-  background-color: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: white 0 1px 0 rgba(255, 255, 255, 0.5);
-  //   padding: 20px;
-  border: 1px white;
-  margin: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.movieCard img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.movieCard h3 {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.movieCard p {
-  font-size: 14px;
-  margin: 5px 0;
-}
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: white 0 1px 0 rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+  
+    &:hover img {
+      transform: scale(1.1);  // Scale the image to 1.1 times its size on hover
+    }
+  }
+  
+  .movieCard img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;  // Ensure the image is behind the text
+  }
+  
+  .movieCard h3,
+  .movieCard p {
+    position: relative;  // Make sure the text is above the image
+    z-index: 2;  // Higher z-index than the image
+    background-color: rgba(34, 34, 34, 0.8);  // Optional: Add a semi-transparent background for better readability
+    padding: 5px 0;
+  }
+  
+  .movieCard h3 {
+    font-size: 18px;
+    margin: 6px 0;
+  }
+  
+  .movieCard p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
