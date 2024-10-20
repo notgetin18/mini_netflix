@@ -1,7 +1,7 @@
-'use client';
+
 import { fetchMovieDetails } from '@/utils/api';
-import { useParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import { notFound, useParams } from 'next/navigation';
+import React from 'react';
 import styles from './style.module.scss';
 import { FaStar, FaClock, FaFilm, FaGlobe, FaCalendar } from 'react-icons/fa';
 import Image from 'next/image';
@@ -10,44 +10,21 @@ import { MovieDetails } from '@/types';
 import Error from '@/components/Error';
 import Head from 'next/head';
 
-const Page = () => {
-  const { movieId } = useParams();
-  const [movieDetails, setMovieDetails] = useState<MovieDetails | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (movieId && typeof movieId === 'string') {
-      setLoading(true);
-      const getMovieDetails = async () => {
-        try {
-          const data = await fetchMovieDetails(movieId);
-          if (data.Response === 'False') {
-            setError(data.Error);
-            return;
-          }
-          setMovieDetails(data);
-        } catch (err) {
-          setError('An unknown error occurred.');
-        } finally {
-          setLoading(false);
-        }
-      };
-      getMovieDetails();
+const getMovieDetails = async (movieId: string) => {
+  try {
+    const data = await fetchMovieDetails(movieId);
+    if (data.Response === 'False') {
+      return notFound();
     }
-  }, [movieId]);
-
-  if (loading) {
-    return <Loading />;
+    return data
+  } catch (err) {
+    // implement error handling logger
+    notFound();
   }
+}
 
-  if (error) {
-    return <Error message={error} />;
-  }
-
-  if (!movieDetails) {
-    return <Error message="No Movie Details Found" />;
-  }
+const Page = async ({ params }: { params: { movieId: string } }) => {
+  const movieDetails: MovieDetails = await getMovieDetails(params.movieId)
 
   return (
     <React.Fragment>

@@ -8,7 +8,7 @@ export const fetchMovieList = async () => {
         'tt0120737', 'tt4154796', 'tt0816692'
     ];
 
-    const requests = movieIds.map(id => axios.get(`${process.env.BASE_URL}?i=${id}&apikey=${process.env.API_KEY}`));
+    const requests = movieIds.map(id => axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}?i=${id}&apikey=${process.env.NEXT_PUBLIC_API_KEY}`));
     const responses = await Promise.all(requests);
     return responses.map(response => response.data);
 };
@@ -16,7 +16,7 @@ export const fetchMovieList = async () => {
 // Fetches all detailed information about a specific movie using its ID and returns the data from the API.
 export const fetchMovieDetails = async (movieId: string) => {
     try {
-        const response = await axios.get(`${process.env.BASE_URL}?i=${movieId}&apikey=${process.env.API_KEY}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}?i=${movieId}&apikey=${process.env.NEXT_PUBLIC_API_KEY}`);
         return response.data;
     } catch (error) {
         console.error('Error fetching movie details:', error);
