@@ -7,26 +7,46 @@ import { FaStar, FaClock, FaFilm, FaGlobe, FaCalendar } from 'react-icons/fa';
 import Image from 'next/image';
 import Loading from '@/components/Loading';
 import { MovieDetails } from '@/types';
+import Error from '@/components/Error';
 
 const Page = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState<MovieDetails | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (movieId && typeof movieId === 'string') {
       setLoading(true);
       const getMovieDetails = async () => {
-        const data = await fetchMovieDetails(movieId);
-        setMovieDetails(data);
-        setLoading(false);
+        try {
+          const data = await fetchMovieDetails(movieId);
+          if (data.Response === 'False') {
+            setError(data.Error);
+            return;
+          }
+          setMovieDetails(data);
+        } catch (err) {
+          setError('An unknown error occurred.');
+        } finally {
+          setLoading(false);
+        }
       };
       getMovieDetails();
     }
   }, [movieId]);
 
-  if (loading) return <Loading />;
-  if (!movieDetails) return <p style={{ color: 'red', textAlign: 'center', }}>No movie details found.</p>;
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <Error message={error} />;
+  }
+
+  if (!movieDetails) {
+    return <Error message="No Movie Details Found" />;
+  }
 
   return (
     <div className={styles.movieDetailsPage}>
@@ -61,7 +81,7 @@ const Page = () => {
 
       {/* movie Info */}
       <div className={styles.movieDetails}>
-        <h3>Movie Info.</h3>
+        <h3>Movie Info</h3>
         <div className={styles.detailsWrapper}>
           <div>
             <p><strong>Actors:</strong> {movieDetails.Actors}</p>

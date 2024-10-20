@@ -8,7 +8,6 @@ export const fetchMovieList = async () => {
 
     const requests = movieIds.map(id => axios.get(`${process.env.BASE_URL}?i=${id}&apikey=${process.env.API_KEY}`));
     const responses = await Promise.all(requests);
-    console.log("Response", responses);
     return responses.map(response => response.data);
 };
 
