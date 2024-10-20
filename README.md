@@ -46,4 +46,4 @@ Mini Netflix is a simplified version of the popular Netflix platform built using
 
 ## Deployment 
 
-- Deployed On Vercel `https://mini-netflix-gamma.vercel.app/`
+- Deployed On Vercel https://mini-netflix-gamma.vercel.app/
