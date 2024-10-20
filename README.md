@@ -44,4 +44,6 @@ Mini Netflix is a simplified version of the popular Netflix platform built using
 - Visit `http://localhost:3000` after starting the development server.
 - Try searching for different movies and observe the responsive design and accessibility features.
 
+## Deployment 
 
+- Deployed On Vercel `https://mini-netflix-gamma.vercel.app/`
