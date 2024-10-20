@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export const fetchMovieList = async () => {
     const movieIds = [
-        'tt3896198', 'tt0848228', 'tt1375666', 'tt0468569', 'tt0076759',
-        'tt0120737', 'tt4154796', 'tt0068646'
+        'tt3896198', 'tt0848228', 'tt1375666', 'tt0468569', 'tt10872600',
+        'tt0120737', 'tt4154796', 'tt0816692'
     ];
 
     const requests = movieIds.map(id => axios.get(`${process.env.BASE_URL}?i=${id}&apikey=${process.env.API_KEY}`));

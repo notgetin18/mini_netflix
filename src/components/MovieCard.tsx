@@ -8,9 +8,9 @@ const MovieCard = ({ movie, onClick }: MovieCardProps) => {
         <div className={styles.movieCard} onClick={() => onClick(movie.imdbID)}>
             <img src={movie.Poster} alt={movie.Title} className={styles.poster} />
             <h3>{movie.Title}</h3>
-            <p>{movie.Year}</p>
+            {/* <p>{movie.Year}</p>
             <p>{movie.Genre}</p>
-            <p>IMDB Rating: {movie.imdbRating}</p>
+            <p>IMDB Rating: {movie.imdbRating}</p> */}
         </div>
     );
 };
