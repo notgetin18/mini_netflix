@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from '../styles/MovieCard.module.scss'
+import styles from '../styles/MovieCard.module.scss';
+import { MovieCardProps } from '@/types';
 
-const MovieCard = ({ movie, onClick }: any) => {
-    // console.log("movie",movie)
+const MovieCard = ({ movie, onClick }: MovieCardProps) => {
+
     return (
-        <div className={styles.movieCard} onClick={onClick}>
+        <div className={styles.movieCard} onClick={() => onClick(movie.imdbID)}>
             <img src={movie.Poster} alt={movie.Title} className={styles.poster} />
             <h3>{movie.Title}</h3>
             <p>{movie.Year}</p>

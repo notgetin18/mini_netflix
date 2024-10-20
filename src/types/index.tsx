@@ -15,3 +15,17 @@ export interface MovieDetails {
     Year: string;
     Rated: string;
 }
+
+interface Movie {
+    imdbID: string;
+    Title: string;
+    Poster: string;
+    Year: string;
+    Genre: string;
+    imdbRating: string;
+}
+
+export interface MovieCardProps {
+    movie: Movie;
+    onClick: (movieId: string) => void;
+}
