@@ -5,8 +5,10 @@ import {
     FaTwitter,
     FaInstagram,
     FaLinkedinIn,
+    FaGithub,
     FaYoutube,
 } from "react-icons/fa";
+import { AiOutlineClose } from 'react-icons/ai';
 import Link from "next/link";
 
 export const metadata = {
@@ -20,7 +22,6 @@ const Footer = () => {
                 <div className={footerStyles.content}>
                     <div className={footerStyles.top}>
                         <div className={footerStyles["logo-details"]}>
-                            {/*<i className={footerStyles.fab fa-slack]></i>*/}
                             <span className={footerStyles.logo_name}>Amit kumar</span>
                         </div>
                         <div className={footerStyles[`media-icons`]}>
@@ -29,23 +30,20 @@ const Footer = () => {
                                 target="_blank"
                             >
                                 <i>
-                                    {" "}
-                                    <FaFacebookF />{" "}
+                                    <FaFacebookF />
                                 </i>
                             </Link>
                             <Link href="https://twitter.com/i/flow/login" target="_blank">
                                 <i>
-                                    {" "}
-                                    <FaTwitter />{" "}
-                                </i>{" "}
+                                    <AiOutlineClose />
+                                </i>
                             </Link>
                             <Link
                                 href="https://www.instagram.com/notgetin18/"
                                 target="_blank"
                             >
                                 <i>
-                                    {" "}
-                                    <FaInstagram />{" "}
+                                    <FaInstagram />
                                 </i>
                             </Link>
                             <Link
@@ -53,14 +51,15 @@ const Footer = () => {
                                 target="_blank"
                             >
                                 <i>
-                                    {" "}
-                                    <FaLinkedinIn />{" "}
+                                    <FaLinkedinIn />
                                 </i>
                             </Link>
-                            <Link href="#">
+                            <Link
+                                href="https://github.com/notgetin18"
+                                target="_blank"
+                            >
                                 <i>
-                                    {" "}
-                                    <FaYoutube />{" "}
+                                    <FaGithub />
                                 </i>
                             </Link>
                         </div>
@@ -142,7 +141,7 @@ const Footer = () => {
                         <span className={footerStyles.copyright_text}>
                             {" "}
                             Copyright © 2024
-                            <Link href="/>"> Amit kumar.</Link> All rights reserved{" "}
+                            <Link href="/>"> Mini Netflix.</Link> All rights reserved{" "}
                         </span>
                         <span className={footerStyles.policy_terms}>
                             <Link href="/">Privacy policy</Link>
