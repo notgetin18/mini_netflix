@@ -66,9 +66,29 @@
     }
   }
 
+  .detailsWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    div {
+      flex: 1;
+
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
   .movieDetails {
     margin-top: 30px;
     padding: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
 
     h3 {
       font-size: 1.8rem;
@@ -84,6 +104,8 @@
     padding: 2px 20px 20px 20px;
     display: flex;
     gap: 10px;
+    max-width: 1280px;
+    margin: 0 auto;
 
     button {
       padding: 10px 20px;
