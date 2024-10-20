@@ -7,7 +7,14 @@ const nextConfig = {
   },
 
   images: {
-    domains: ["m.media-amazon.com"], 
+    remotePatterns: [
+      { protocol: "https", hostname: "localhost", pathname: "**" },
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
+        pathname: "**",
+      },
+    ],
   },
 };
 
