@@ -1,31 +1,194 @@
-.movieDetails {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 120px 10px 10px 10px;
-  background-color: rgb(34, 33, 33);
-  text-align: center;
-  color: rgb(236, 234, 234);
+.movieDetailsPage {
+  font-family: "Arial", sans-serif;
+  color: white;
+  background-color: rgb(35, 35, 35);
 
-  img {
-    max-width: 300px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+  .movieHeader {
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    position: relative;
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .posterWrapper {
+      width: 480px;
+      margin-top: 120px;
+
+      @media (max-width: 767px) {
+        width: 350px;
+      }
+
+      img.poster {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(94, 93, 93, 0.9);
+        width: 100%;
+      }
+    }
+
+    .movieInfo {
+      flex-grow: 1;
+      margin-left: 20px;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .movieStats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        div {
+          display: flex;
+          align-items: center;
+          font-size: 1.1rem;
+
+          .icon {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
   }
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  .movieDetails {
+    margin-top: 30px;
+    padding: 20px;
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
   }
 
-  p {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+  .actions {
+    padding: 2px 20px 20px 20px;
+    display: flex;
+    gap: 10px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .trailerButton {
+      background-color: rgb(248, 38, 38);
+      color: white;
+      &:hover {
+        background-color: red;
+      }
+    }
+
+    .watchlistButton {
+      background-color: #4caf50;
+      color: white;
+      &:hover {
+        background-color: #3e8c42;
+      }
+    }
   }
 
-  .rating {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #ff9800; // Optional: Add a color to highlight the rating
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    padding: 10px;
+
+    .movieHeader {
+      flex-direction: column;
+      height: auto;
+
+      .overlay {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 10px;
+      }
+
+      .posterWrapper {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .movieInfo {
+        margin-left: 0;
+        text-align: center;
+
+        h2 {
+          font-size: 2rem; /* Decrease title size on mobile */
+        }
+
+        p {
+          font-size: 1rem; /* Decrease paragraph size */
+        }
+
+        .movieStats {
+          justify-content: center;
+          gap: 10px;
+
+          div {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .actions {
+      flex-direction: column; /* Stack buttons vertically */
+      button {
+        width: 100%; /* Make buttons full width on mobile */
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  /* Small Mobile (under 480px) */
+  @media (max-width: 480px) {
+    .movieHeader {
+      .movieInfo {
+        h2 {
+          font-size: 1.8rem; /* Further decrease title size */
+        }
+
+        p {
+          font-size: 0.9rem; /* Decrease paragraph size for small screens */
+        }
+
+        .movieStats {
+          div {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .movieDetails {
+      h3 {
+        font-size: 1.5rem; /* Smaller heading size for smaller screens */
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
   }
 }
