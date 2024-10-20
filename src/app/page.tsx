@@ -2,6 +2,7 @@
 import React from 'react';
 import './HomePage.scss';
 import MovieList from '@/components/MovieList';
+import Faq from '@/components/Faq';
 
 const HomePage: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
         padding: '20px 0'
       }}>
         <MovieList />
+        <Faq />
       </div>
     </React.Fragment>
   );
