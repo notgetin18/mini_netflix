@@ -5,7 +5,7 @@ import '../styles/Navbar.scss';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -20,18 +20,12 @@ const Navbar: React.FC = () => {
                     <Image src="/images/logo1.png" alt="my logo image" width={90} height={60} priority />
                 </Link>
 
-                {/* Hamburger Icon (for mobile) */}
-                {/* <div className="navbar__toggle" onClick={toggleMenu}>
-                    <span className="navbar__toggle-icon"></span>
-                    <span className="navbar__toggle-icon"></span>
-                    <span className="navbar__toggle-icon"></span>
-                </div> */}
-
+                {/* Hamburger Icon (for mobile and tabs) */}
                 <div className="navbar__toggle" onClick={toggleMenu}>
                     {isOpen ? (
-                        <FaTimes className="navbar__icon" /> // Show cross icon if menu is open
+                        <FaTimes className="navbar__icon" />
                     ) : (
-                        <FaBars className="navbar__icon" />  // Show hamburger icon if menu is closed
+                        <FaBars className="navbar__icon" />
                     )}
                 </div>
 

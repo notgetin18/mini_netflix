@@ -21,23 +21,15 @@
     display: none; /* Hide on larger screens */
     flex-direction: column;
     justify-content: space-around;
-    // width: 30px;
-    // height: 24px;
     cursor: pointer;
 
-    .navbar__icon{
+    .navbar__icon {
       font-size: 25px;
+      color: white;
     }
 
     @media (max-width: 768px) {
       display: flex; /* Show hamburger icon on screens smaller than 768px */
-    }
-
-    .navbar__toggle-icon {
-      width: 100%;
-      height: 3px;
-      background-color: white;
-      border-radius: 2px;
     }
   }
 
