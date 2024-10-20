@@ -16,15 +16,18 @@ const MovieList = () => {
     };
 
     return (
-        <div className={styles.movieList}>
-            {movies.map(movie => (
-                <MovieCard
-                    key={movie?.imdbID}
-                    movie={movie}
-                    onClick={() => {
-                        handleCardClick(movie.imdbID)
-                    }} />
-            ))}
+        <div className={styles.movieListPage}>
+            <h2 className={styles.heading}>Top Watched Movies</h2>
+            <div className={styles.movieList}>
+                {movies.map(movie => (
+                    <MovieCard
+                        key={movie?.imdbID}
+                        movie={movie}
+                        onClick={() => {
+                            handleCardClick(movie.imdbID)
+                        }} />
+                ))}
+            </div>
         </div>
     );
 };

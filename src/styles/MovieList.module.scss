@@ -1,9 +1,30 @@
-.movieList {
+.movieListPage {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+}
+
+.movieList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
-  // padding: 0px 0px 80px 80px;
+  padding: 0px 5px 0px 5px;
+}
+
+.heading {
+  font-size: 32px;
+  color: white;
+  padding: 10px 5px 0px 10px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    color: white;
+    padding: 10px 5px 0px 10px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 28px;
+    color: white;
+    padding: 10px 5px 0px 10px;
+  }
 }
