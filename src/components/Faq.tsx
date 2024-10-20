@@ -22,7 +22,7 @@ const Faq = () => {
                     </div>
                     <div
                         className={`${styles.answer} ${openIndex === index ? styles.open : ''}`}
-                        style={{ maxHeight: openIndex === index ? '200px' : '0px' }}  // Adjust max height based on content
+                        style={{ maxHeight: openIndex === index ? '200px' : '0px' }}  
                     >
                         <p>{faq.answer}</p>
                     </div>

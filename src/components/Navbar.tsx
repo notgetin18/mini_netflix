@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className="navbar__container">
                 {/* Logo */}
                 <Link href="/">
-                    <Image src="/images/logo1.png" alt="my logo image" width={90} height={60} priority />
+                    <Image src="/images/logo1.png" alt="logo" width={90} height={60} priority />
                 </Link>
 
                 {/* Hamburger Icon (for mobile and tabs) */}
@@ -31,13 +31,13 @@ const Navbar = () => {
 
                 {/* Navigation Links */}
                 <div className={`navbar__menu ${isOpen ? 'active' : ''}`}>
-                    <Link href="/" className="navbar__link">
+                    <Link href="/" className="navbar__link" onClick={toggleMenu}>
                         Home
                     </Link>
-                    <Link href="/" className="navbar__link">
+                    <Link href="/" className="navbar__link" onClick={toggleMenu}>
                         About Us
                     </Link>
-                    <button className="navbar__button">Sign In</button>
+                    <button className="navbar__button" onClick={toggleMenu}>Sign In</button>
                 </div>
             </div>
         </nav>

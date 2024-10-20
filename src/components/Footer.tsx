@@ -2,11 +2,9 @@ import React from "react";
 import footerStyles from "../styles/Footer.module.scss"
 import {
     FaFacebookF,
-    FaTwitter,
     FaInstagram,
     FaLinkedinIn,
     FaGithub,
-    FaYoutube,
 } from "react-icons/fa";
 import { AiOutlineClose } from 'react-icons/ai';
 import Link from "next/link";
@@ -139,9 +137,8 @@ const Footer = () => {
                 <div className={footerStyles["bottom-details"]}>
                     <div className={footerStyles.bottom_text}>
                         <span className={footerStyles.copyright_text}>
-                            {" "}
                             Copyright © 2024
-                            <Link href="/>"> Mini Netflix.</Link> All rights reserved{" "}
+                            <Link href="/>"> Mini Netflix.</Link> All rights reserved
                         </span>
                         <span className={footerStyles.policy_terms}>
                             <Link href="/">Privacy policy</Link>
