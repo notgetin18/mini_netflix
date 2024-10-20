@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import '../styles/Navbar.scss';
 import Link from 'next/link';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,18 @@ const Navbar: React.FC = () => {
                 </Link>
 
                 {/* Hamburger Icon (for mobile) */}
+                {/* <div className="navbar__toggle" onClick={toggleMenu}>
+                    <span className="navbar__toggle-icon"></span>
+                    <span className="navbar__toggle-icon"></span>
+                    <span className="navbar__toggle-icon"></span>
+                </div> */}
+
                 <div className="navbar__toggle" onClick={toggleMenu}>
-                    <span className="navbar__toggle-icon"></span>
-                    <span className="navbar__toggle-icon"></span>
-                    <span className="navbar__toggle-icon"></span>
+                    {isOpen ? (
+                        <FaTimes className="navbar__icon" /> // Show cross icon if menu is open
+                    ) : (
+                        <FaBars className="navbar__icon" />  // Show hamburger icon if menu is closed
+                    )}
                 </div>
 
                 {/* Navigation Links */}
