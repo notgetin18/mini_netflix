@@ -1,15 +1,14 @@
 
 import { fetchMovieDetails } from '@/utils/api';
-import { notFound, useParams } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import React from 'react';
 import styles from './style.module.scss';
 import { FaStar, FaClock, FaFilm, FaGlobe, FaCalendar } from 'react-icons/fa';
 import Image from 'next/image';
-import Loading from '@/components/Loading';
 import { MovieDetails } from '@/types';
-import Error from '@/components/Error';
 import Head from 'next/head';
 
+// fetch data from api on server side
 const getMovieDetails = async (movieId: string) => {
   try {
     const data = await fetchMovieDetails(movieId);

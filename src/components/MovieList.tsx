@@ -4,13 +4,14 @@ import MovieCard from './MovieCard';
 import styles from "../styles/MovieList.module.scss"
 import { useRouter } from 'next/navigation';
 import Loading from './Loading';
+import Error from "../components/Error"
 
 const MovieList = () => {
     const { movies, loading, error } = useFetchMovies();
     const router = useRouter();
 
     if (loading) return <Loading />;
-    if (error) return <p style={{ color: 'red', textAlign: 'center', }}>{error}</p>;
+    if (error) return <Error message={error} />;
 
     const handleCardClick = (movieId: string) => {
         router.push(`/movie/${movieId}`);
