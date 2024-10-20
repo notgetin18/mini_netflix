@@ -30,7 +30,7 @@ Mini Netflix is a simplified version of the popular Netflix platform built using
 
 1. Clone the repository:
    git clone https://github.com/notgetin18/mini_netflix.git
-   
+
 2. Install dependencies:
    npm install
 
@@ -48,4 +48,5 @@ Mini Netflix is a simplified version of the popular Netflix platform built using
 
 ## Deployment
 
-- Deployed On Vercel https://mini-netflix-gamma.vercel.app/
+- Deployed On Vercel
+  https://mini-netflix-8m2u.vercel.app/
