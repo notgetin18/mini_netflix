@@ -27,6 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* prefetched in head so that it helps reduce latency when your application needs to load content from that domain later on   */}
+        <link rel="dns-prefetch" href="m.media-amazon.com" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         {children}
