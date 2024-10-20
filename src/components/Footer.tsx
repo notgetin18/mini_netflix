@@ -84,10 +84,10 @@ const Footer = () => {
                         <ul className={footerStyles.box}>
                             <li className={footerStyles.link_name}>Services</li>
                             <li>
-                                <a href="#">App design</a>
+                                <a href="#">App development</a>
                             </li>
                             <li>
-                                <a href="#">Web design</a>
+                                <a href="#">Web development</a>
                             </li>
                             <li>
                                 <a href="#">Logo design</a>
@@ -112,7 +112,7 @@ const Footer = () => {
                             </li>
                         </ul>
                         <ul className={footerStyles.box}>
-                            <li className={footerStyles.link_name}>Courses</li>
+                            <li className={footerStyles.link_name}>Teach Stack</li>
                             <li>
                                 <a href="#">HTML & CSS</a>
                             </li>
@@ -120,10 +120,10 @@ const Footer = () => {
                                 <a href="#">JavaScript</a>
                             </li>
                             <li>
-                                <a href="#">Photography</a>
+                                <a href="#">Next.js</a>
                             </li>
                             <li>
-                                <a href="#">Photoshop</a>
+                                <a href="#">React.js</a>
                             </li>
                         </ul>
                         <ul className={`${footerStyles.box} ${footerStyles["input-box"]}`}>
@@ -141,7 +141,7 @@ const Footer = () => {
                     <div className={footerStyles.bottom_text}>
                         <span className={footerStyles.copyright_text}>
                             {" "}
-                            Copyright © 2023
+                            Copyright © 2024
                             <Link href="/>"> Amit kumar.</Link> All rights reserved{" "}
                         </span>
                         <span className={footerStyles.policy_terms}>
