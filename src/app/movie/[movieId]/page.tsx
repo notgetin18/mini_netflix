@@ -5,40 +5,28 @@ import React, { useEffect, useState } from 'react';
 import styles from './style.module.scss';
 import { FaStar, FaClock, FaFilm, FaGlobe, FaCalendar } from 'react-icons/fa';
 import Image from 'next/image';
-
-interface MovieDetails {
-  Poster: string;
-  Title: string;
-  Plot: string;
-  imdbRating: string;
-  Actors: string;
-  Awards: string;
-  BoxOffice: string;
-  Country: string;
-  Director: string;
-  Genre: string;
-  Language: string;
-  Released: string;
-  Runtime: string;
-  Year: string;
-  Rated: string;
-}
+import Loading from '@/components/Loading';
+import { MovieDetails } from '@/types';
 
 const Page = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState<MovieDetails | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (movieId && typeof movieId === 'string') {
+      setLoading(true);
       const getMovieDetails = async () => {
         const data = await fetchMovieDetails(movieId);
         setMovieDetails(data);
+        setLoading(false);
       };
       getMovieDetails();
     }
   }, [movieId]);
 
-  if (!movieDetails) return <p>Loading...</p>;
+  if (loading) return <Loading />;
+  if (!movieDetails) return <p style={{ color: 'red', textAlign: 'center', }}>No movie details found.</p>;
 
   return (
     <div className={styles.movieDetailsPage}>
@@ -71,6 +59,7 @@ const Page = () => {
         </div>
       </div>
 
+      {/* movie Info */}
       <div className={styles.movieDetails}>
         <h3>Movie Info.</h3>
         <div className={styles.detailsWrapper}>
@@ -88,6 +77,7 @@ const Page = () => {
         </div>
       </div>
 
+      {/* action buttons */}
       <div className={styles.actions}>
         <button className={styles.trailerButton}>Watch Trailer</button>
         <button className={styles.watchlistButton}>Add to Watchlist</button>
