@@ -15,14 +15,14 @@ const Faq = () => {
             {faqs.map((faq, index) => (
                 <div key={index} className={styles.faqCard}>
                     <div className={styles.question} onClick={() => toggleFaq(index)}>
-                        <h3>{faq.question}</h3>
+                        <h3>{index + 1}. {faq.question}</h3>
                         <span className={styles.icon}>
                             {openIndex === index ? '-' : '+'}
                         </span>
                     </div>
                     <div
                         className={`${styles.answer} ${openIndex === index ? styles.open : ''}`}
-                        style={{ maxHeight: openIndex === index ? '200px' : '0px' }}  
+                        style={{ maxHeight: openIndex === index ? '200px' : '0px' }}
                     >
                         <p>{faq.answer}</p>
                     </div>
